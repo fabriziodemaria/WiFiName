@@ -34,9 +34,9 @@
 }
 
 - (void)func1{
+    NSString *oldString;
     while(true){
         CWInterface *wif = [CWInterface interface];
-        NSLog(@"SSID: %@", wif.ssid);
         NSString *message = [NSString stringWithFormat:@"WiFi: %@",
                             wif.ssid];
         NSString *shortString;
@@ -48,7 +48,12 @@
         } else {
             shortString = message;
         }
-        [_statusItem setTitle:shortString];
+        if([shortString isEqualToString:oldString]){
+            
+        } else {
+            oldString = [NSString stringWithString:shortString];
+            [_statusItem setTitle:shortString];
+        }
         [NSThread sleepForTimeInterval:5];
     }
 }
