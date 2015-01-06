@@ -26,7 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FB6888D81A5B3769005C1767 /* StatusBarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatusBarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB6888D81A5B3769005C1767 /* WiFiName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiFiName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6888DC1A5B3769005C1767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB6888DD1A5B3769005C1767 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FB6888DE1A5B3769005C1767 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -35,7 +35,7 @@
 		FB6888E31A5B376A005C1767 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FB6888E51A5B376A005C1767 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FB6888E81A5B376A005C1767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FB6888EE1A5B376A005C1767 /* StatusBarAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatusBarAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB6888EE1A5B376A005C1767 /* WiFiNameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiFiNameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6888F31A5B376A005C1767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB6888F41A5B376A005C1767 /* StatusBarAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusBarAppTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,8 +70,8 @@
 		FB6888D91A5B3769005C1767 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FB6888D81A5B3769005C1767 /* StatusBarApp.app */,
-				FB6888EE1A5B376A005C1767 /* StatusBarAppTests.xctest */,
+				FB6888D81A5B3769005C1767 /* WiFiName.app */,
+				FB6888EE1A5B376A005C1767 /* WiFiNameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FB6888D71A5B3769005C1767 /* StatusBarApp */ = {
+		FB6888D71A5B3769005C1767 /* WiFiName */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FB6888F81A5B376A005C1767 /* Build configuration list for PBXNativeTarget "StatusBarApp" */;
+			buildConfigurationList = FB6888F81A5B376A005C1767 /* Build configuration list for PBXNativeTarget "WiFiName" */;
 			buildPhases = (
 				FB6888D41A5B3769005C1767 /* Sources */,
 				FB6888D51A5B3769005C1767 /* Frameworks */,
@@ -131,14 +131,14 @@
 			);
 			dependencies = (
 			);
-			name = StatusBarApp;
+			name = WiFiName;
 			productName = StatusBarApp;
-			productReference = FB6888D81A5B3769005C1767 /* StatusBarApp.app */;
+			productReference = FB6888D81A5B3769005C1767 /* WiFiName.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FB6888ED1A5B376A005C1767 /* StatusBarAppTests */ = {
+		FB6888ED1A5B376A005C1767 /* WiFiNameTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FB6888FB1A5B376A005C1767 /* Build configuration list for PBXNativeTarget "StatusBarAppTests" */;
+			buildConfigurationList = FB6888FB1A5B376A005C1767 /* Build configuration list for PBXNativeTarget "WiFiNameTests" */;
 			buildPhases = (
 				FB6888EA1A5B376A005C1767 /* Sources */,
 				FB6888EB1A5B376A005C1767 /* Frameworks */,
@@ -149,9 +149,9 @@
 			dependencies = (
 				FB6888F01A5B376A005C1767 /* PBXTargetDependency */,
 			);
-			name = StatusBarAppTests;
+			name = WiFiNameTests;
 			productName = StatusBarAppTests;
-			productReference = FB6888EE1A5B376A005C1767 /* StatusBarAppTests.xctest */;
+			productReference = FB6888EE1A5B376A005C1767 /* WiFiNameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FB6888D31A5B3769005C1767 /* Build configuration list for PBXProject "StatusBarApp" */;
+			buildConfigurationList = FB6888D31A5B3769005C1767 /* Build configuration list for PBXProject "WiFiName" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -185,8 +185,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FB6888D71A5B3769005C1767 /* StatusBarApp */,
-				FB6888ED1A5B376A005C1767 /* StatusBarAppTests */,
+				FB6888D71A5B3769005C1767 /* WiFiName */,
+				FB6888ED1A5B376A005C1767 /* WiFiNameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,7 +234,7 @@
 /* Begin PBXTargetDependency section */
 		FB6888F01A5B376A005C1767 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FB6888D71A5B3769005C1767 /* StatusBarApp */;
+			target = FB6888D71A5B3769005C1767 /* WiFiName */;
 			targetProxy = FB6888EF1A5B376A005C1767 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -334,7 +334,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = StatusBarApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WiFiName;
 			};
 			name = Debug;
 		};
@@ -345,7 +345,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = StatusBarApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WiFiName;
 			};
 			name = Release;
 		};
@@ -364,8 +364,8 @@
 				);
 				INFOPLIST_FILE = StatusBarAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StatusBarApp.app/Contents/MacOS/StatusBarApp";
+				PRODUCT_NAME = WiFiNameTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiFiName.app/Contents/MacOS/WiFiName";
 			};
 			name = Debug;
 		};
@@ -380,15 +380,15 @@
 				);
 				INFOPLIST_FILE = StatusBarAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StatusBarApp.app/Contents/MacOS/StatusBarApp";
+				PRODUCT_NAME = WiFiNameTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiFiName.app/Contents/MacOS/WiFiName";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FB6888D31A5B3769005C1767 /* Build configuration list for PBXProject "StatusBarApp" */ = {
+		FB6888D31A5B3769005C1767 /* Build configuration list for PBXProject "WiFiName" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FB6888F61A5B376A005C1767 /* Debug */,
@@ -397,21 +397,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FB6888F81A5B376A005C1767 /* Build configuration list for PBXNativeTarget "StatusBarApp" */ = {
+		FB6888F81A5B376A005C1767 /* Build configuration list for PBXNativeTarget "WiFiName" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FB6888F91A5B376A005C1767 /* Debug */,
 				FB6888FA1A5B376A005C1767 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		FB6888FB1A5B376A005C1767 /* Build configuration list for PBXNativeTarget "StatusBarAppTests" */ = {
+		FB6888FB1A5B376A005C1767 /* Build configuration list for PBXNativeTarget "WiFiNameTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FB6888FC1A5B376A005C1767 /* Debug */,
 				FB6888FD1A5B376A005C1767 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
