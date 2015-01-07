@@ -12,6 +12,7 @@
 @interface AppDelegate ()
 @property (strong, nonatomic) NSStatusItem *statusItem;
 @property (strong, nonatomic) CWInterface *wif;
+
 @end
 
 
@@ -29,18 +30,10 @@
     [_statusItem setAction:@selector(itemClicked:)];
     
     _wif = [CWInterface interface];
-    
     [self updateTitle];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWModeDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWSSIDDidChangeNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWBSSIDDidChangeNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWCountryCodeDidChangeNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWLinkDidChangeNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWPowerDidChangeNotification object:nil];
-    
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
