@@ -39,10 +39,18 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWLinkDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWPowerDidChangeNotification object:nil];
     
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
 }
+
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification{
+    return YES;
+}
+
 
 -(void)updateTitle{
     NSString *message = [NSString stringWithFormat:@"WiFi: %@",
@@ -57,12 +65,27 @@
         shortString = message;
     }
     [_statusItem setTitle:shortString];
+    [self showNotification:self.wif.ssid];
 }
 
 
 -(void) handleInterfaceNotification:(NSNotification*) notification;
 {
     [self updateTitle];
+}
+
+- (IBAction)showNotification:(NSString *)wifiname{
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    if(wifiname!=nil){
+    notification.title = @"New WiFi connection";
+    NSString *namemsg = [NSString stringWithFormat:@"WiFi name: %@",
+                         wifiname];
+    notification.informativeText = namemsg;
+    } else {
+        notification.title = @"WiFi disconnected";
+    }
+    //notification.soundName = NSUserNotificationDefaultSoundName;
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
 - (void)itemClicked:(id)sender {
