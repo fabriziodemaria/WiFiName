@@ -11,6 +11,7 @@
 
 @interface AppDelegate ()
 @property (strong, nonatomic) NSStatusItem *statusItem;
+@property (strong, nonatomic) CWInterface *wif;
 @end
 
 
@@ -26,36 +27,42 @@
     _statusItem.toolTip = @"Ctrl + Click to quit";
     [_statusItem setTarget:self];
     [_statusItem setAction:@selector(itemClicked:)];
-    [self performSelectorInBackground:@selector(func1) withObject:nil];
+    
+    _wif = [CWInterface interface];
+    
+    [self updateTitle];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWModeDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWSSIDDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWBSSIDDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWCountryCodeDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWLinkDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWPowerDidChangeNotification object:nil];
+    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
 }
 
-- (void)func1{
-    NSString *oldString;
-    while(true){
-        CWInterface *wif = [CWInterface interface];
-        NSString *message = [NSString stringWithFormat:@"WiFi: %@",
-                            wif.ssid];
-        NSString *shortString;
-        if([message length] > 20){
-            shortString = [NSString stringWithFormat:@"%@...",
-                           [message substringToIndex:10]];
-        } else if (wif.ssid == nil){
-            shortString = @"WiFi: Off";
-        } else {
-            shortString = message;
-        }
-        if([shortString isEqualToString:oldString]){
-            
-        } else {
-            oldString = [NSString stringWithString:shortString];
-            [_statusItem setTitle:shortString];
-        }
-        [NSThread sleepForTimeInterval:5];
+-(void)updateTitle{
+    NSString *message = [NSString stringWithFormat:@"WiFi: %@",
+                         self.wif.ssid];
+    NSString *shortString;
+    if([message length] > 20){
+        shortString = [NSString stringWithFormat:@"%@...",
+                       [message substringToIndex:10]];
+    } else if (self.wif.ssid == nil){
+        shortString = @"WiFi: Off";
+    } else {
+        shortString = message;
     }
+    [_statusItem setTitle:shortString];
+}
+
+
+-(void) handleInterfaceNotification:(NSNotification*) notification;
+{
+    [self updateTitle];
 }
 
 - (void)itemClicked:(id)sender {
