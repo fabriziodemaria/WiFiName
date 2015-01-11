@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-IBOutlet NSMenu *theMenu;
+NSMenu *theMenu;
 NSMenuItem *ipMenuItem;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
