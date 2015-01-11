@@ -8,11 +8,13 @@
 
 #import "AppDelegate.h"
 #import <CoreWLAN/CoreWLAN.h>
+#import "NewWindowController.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) NSStatusItem *statusItem;
 @property (strong, nonatomic) CWInterface *wif;
-
+@property (weak) IBOutlet NSMenu *MyMenu;
+@property (strong, nonatomic) NewWindowController *controllerWindow;
 @end
 
 
@@ -21,11 +23,12 @@
 //NSStatusItem *statusItem;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    
     [NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
     
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
     _statusItem = [statusBar statusItemWithLength:NSVariableStatusItemLength];
-    _statusItem.toolTip = @"Ctrl + Click to quit";
+    //_statusItem.toolTip = @"Ctrl + Click to quit";
     [_statusItem setTarget:self];
     [_statusItem setAction:@selector(itemClicked:)];
     
@@ -34,20 +37,23 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWSSIDDidChangeNotification object:nil];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-    // create menu
-    NSMenu *menu = [[NSMenu alloc] initWithTitle:@""];
-    NSMenuItem *item2 = [[NSMenuItem alloc] initWithTitle:@"Quit" action:@selector(menu2Action) keyEquivalent:@""];
-    [menu addItem:item2];
     
-    [_statusItem setMenu:menu]; // attach
+    // create menu
+    [_statusItem setMenu:_MyMenu]; // attach
     //[self performSelectorInBackground:@selector(stren) withObject:nil];
 }
-
--(void)menu2Action{
-    [[NSApplication sharedApplication] terminate:self];
+- (IBAction)QuitPressed:(id)sender {
+        [[NSApplication sharedApplication] terminate:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
+}
+
+
+- (IBAction)showAbout:(id)sender {
+    [NSApp activateIgnoringOtherApps:YES];
+     self.controllerWindow = [[NewWindowController alloc] initWithWindowNibName:@"NewWindowController"];
+    [self.controllerWindow showWindow:self];
 }
 
 -(void)stren{
@@ -109,26 +115,28 @@
     
     long tot = sum/1;
     NSString *power = nil;
-    
-    if(tot>-40){
-        power = [NSString stringWithFormat:@"exceptional signal"];
-    }
-    if(tot<=-40 && tot >-55){
-        power = [NSString stringWithFormat:@"very good signal"];
-    }
-    if(tot<=-55 && tot >-70){
-        power = [NSString stringWithFormat:@"good signal"];
-    }
-    if(tot<=-70 && tot >-80){
-        power = [NSString stringWithFormat:@"weak signal"];
-    }
-    if(tot<=-80){
-        power = [NSString stringWithFormat:@"very weak signal"];
-    }
+        if(tot==0){
+            power = [NSString stringWithFormat:@", hotspot mode"];
+        }
+        if(tot>-40 && tot >0){
+            power = [NSString stringWithFormat:@", exceptional signal"];
+        }
+        if(tot<=-40 && tot >-55){
+            power = [NSString stringWithFormat:@", very good signal"];
+        }
+        if(tot<=-55 && tot >-70){
+            power = [NSString stringWithFormat:@", good signal"];
+        }
+        if(tot<=-70 && tot >-80){
+            power = [NSString stringWithFormat:@", weak signal"];
+        }
+        if(tot<=-80){
+            power = [NSString stringWithFormat:@", very weak signal"];
+        }
     
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     notification.title = @"New WiFi connection";
-    NSString *namemsg = [NSString stringWithFormat:@"WiFi name: %@, %@",
+    NSString *namemsg = [NSString stringWithFormat:@"WiFi name: %@ %@",
                          wifiname, power];
     notification.informativeText = namemsg;
     //notification.soundName = NSUserNotificationDefaultSoundName;
