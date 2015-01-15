@@ -7,4 +7,7 @@ Still trying to make it possible to reposition the app along the Menu Bar.
 
 I own the material in this repository. If you like my idea and would like to help improving it, contact me.
 
+Temporary App's location (give it a try!):
+https://www.dropbox.com/sh/19qbxxcu559fc63/AACrV3e1d6MoAFhPa4sXqnaGa?dl=0
+
 Cheers
