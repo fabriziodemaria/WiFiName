@@ -14,6 +14,7 @@
 		FB6888E91A5B376A005C1767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6888E71A5B376A005C1767 /* Main.storyboard */; };
 		FB6888F51A5B376A005C1767 /* StatusBarAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6888F41A5B376A005C1767 /* StatusBarAppTests.m */; };
 		FBAFC61F1A614EF000FDFB15 /* AboutWController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAFC61E1A614EF000FDFB15 /* AboutWController.m */; };
+		FBD0522B1A6970CE000EB3EE /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD0522A1A6970CE000EB3EE /* wifi.png */; };
 		FBF9531B1A6312E60015AC62 /* NewWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF953191A6312E60015AC62 /* NewWindowController.m */; };
 		FBF9531C1A6312E60015AC62 /* NewWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF9531A1A6312E60015AC62 /* NewWindowController.xib */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		FB6888F41A5B376A005C1767 /* StatusBarAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusBarAppTests.m; sourceTree = "<group>"; };
 		FBAFC61D1A614EF000FDFB15 /* AboutWController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWController.h; sourceTree = "<group>"; };
 		FBAFC61E1A614EF000FDFB15 /* AboutWController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWController.m; sourceTree = "<group>"; };
+		FBD0522A1A6970CE000EB3EE /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi.png; sourceTree = "<group>"; };
 		FBF953181A6312E60015AC62 /* NewWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewWindowController.h; sourceTree = "<group>"; };
 		FBF953191A6312E60015AC62 /* NewWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewWindowController.m; sourceTree = "<group>"; };
 		FBF9531A1A6312E60015AC62 /* NewWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewWindowController.xib; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				FBF953181A6312E60015AC62 /* NewWindowController.h */,
+				FBD0522A1A6970CE000EB3EE /* wifi.png */,
 				FBF953191A6312E60015AC62 /* NewWindowController.m */,
 				FBF9531A1A6312E60015AC62 /* NewWindowController.xib */,
 				FB6888DA1A5B3769005C1767 /* StatusBarApp */,
@@ -211,6 +214,7 @@
 			files = (
 				FB6888E61A5B376A005C1767 /* Images.xcassets in Resources */,
 				FB6888E91A5B376A005C1767 /* Main.storyboard in Resources */,
+				FBD0522B1A6970CE000EB3EE /* wifi.png in Resources */,
 				FBF9531C1A6312E60015AC62 /* NewWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

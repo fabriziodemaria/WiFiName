@@ -12,6 +12,7 @@
 @property (weak) IBOutlet NSTextField *twitterlabel;
 @property  (strong, nonatomic) NSUserDefaults *defaults;
 @property (weak) IBOutlet NSButton *notificationCheck;
+@property (weak) IBOutlet NSImageView *image;
 
 
 @end
@@ -25,6 +26,7 @@
     if([notificationsActive isEqualToNumber:[NSNumber numberWithInt:0]]){ _notificationCheck.state = NSOffState;}else{
         _notificationCheck.state=NSOnState;
     }
+    [_image setImage:[NSImage imageNamed:@"wifi.png"]];
 }
 
 - (IBAction)QuitPressed:(id)sender {
