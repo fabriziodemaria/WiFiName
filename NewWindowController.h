@@ -10,4 +10,6 @@
 
 @interface NewWindowController : NSWindowController
 
+- (IBAction)settingsChanged:(NSButton *)sender;
+
 @end

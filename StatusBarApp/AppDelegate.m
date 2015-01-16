@@ -15,6 +15,7 @@
 @property (strong, nonatomic) CWInterface *wif;
 @property (weak) IBOutlet NSMenu *MyMenu;
 @property (strong, nonatomic) NewWindowController *controllerWindow;
+@property  (strong, nonatomic) NSUserDefaults *defaults;
 @end
 
 
@@ -25,6 +26,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
     [NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
+    
+    _defaults = [NSUserDefaults standardUserDefaults];
     
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
     _statusItem = [statusBar statusItemWithLength:NSVariableStatusItemLength];
@@ -56,13 +59,6 @@
     [self.controllerWindow showWindow:self];
 }
 
--(void)stren{
-    while (true) {
-        [NSThread sleepForTimeInterval:1];
-        NSLog(@"%ld", self.wif.rssiValue);
-    }
-}
-
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification{
     return YES;
@@ -70,14 +66,14 @@
 
 
 -(void)updateTitle{
-    NSString *message = [NSString stringWithFormat:@"WiFi: %@",
+    NSString *message = [NSString stringWithFormat:@"Wi-Fi: %@",
                          self.wif.ssid];
     NSString *shortString;
     if([message length] > 20){
         shortString = [NSString stringWithFormat:@"%@...",
                        [message substringToIndex:10]];
     } else if (self.wif.ssid == nil){
-        shortString = @"WiFi: Off";
+        shortString = @"Wi-Fi: Off";
     } else {
         shortString = message;
     }
@@ -94,10 +90,16 @@
 
 - (IBAction)showNotification:(NSString *)wifiname{
     
+    //Check preferences about notifications
+    NSNumber *notificationsActive = [[NSNumber alloc] initWithInt:(int)[_defaults integerForKey:@"notificationsActive"]];
+    if([notificationsActive isEqualToNumber:[NSNumber numberWithInt:0]]) return;
+    
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     if(wifiname==nil){
-        notification.title = @"WiFi disconnected";
+        notification.title = @"Wi-Fi disconnected";
     }
+    
+    
     //notification.soundName = NSUserNotificationDefaultSoundName;
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 
@@ -135,8 +137,8 @@
         }
     
     NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = @"New WiFi connection";
-    NSString *namemsg = [NSString stringWithFormat:@"WiFi name: %@ %@",
+    notification.title = @"New Wi-Fi connection";
+    NSString *namemsg = [NSString stringWithFormat:@"Wi-Fi name: %@ %@",
                          wifiname, power];
     notification.informativeText = namemsg;
     //notification.soundName = NSUserNotificationDefaultSoundName;

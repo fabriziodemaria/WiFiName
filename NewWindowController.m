@@ -10,6 +10,9 @@
 
 @interface NewWindowController ()
 @property (weak) IBOutlet NSTextField *twitterlabel;
+@property  (strong, nonatomic) NSUserDefaults *defaults;
+@property (weak) IBOutlet NSButton *notificationCheck;
+
 
 @end
 
@@ -17,8 +20,24 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    _defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *notificationsActive = [[NSNumber alloc] initWithInt:(int)[_defaults integerForKey:@"notificationsActive"]];
+    if([notificationsActive isEqualToNumber:[NSNumber numberWithInt:0]]){ _notificationCheck.state = NSOffState;}else{
+        _notificationCheck.state=NSOnState;
+    }
 }
 
+- (IBAction)QuitPressed:(id)sender {
+    [[NSApplication sharedApplication] terminate:self];
+}
+
+- (IBAction)settingsChanged:(NSButton*)sender {
+    if(sender.state == NSOnState) {
+        [self.defaults setInteger:1 forKey:@"notificationsActive"];
+    }
+    if(sender.state == NSOffState) {
+        [self.defaults setInteger:0 forKey:@"notificationsActive"];
+    }
+    
+}
 @end
