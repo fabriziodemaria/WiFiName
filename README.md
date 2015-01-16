@@ -8,6 +8,6 @@ Still trying to make it possible to reposition the app along the Menu Bar.
 I own the material in this repository. If you like my idea and would like to help improving it, contact me.
 
 Temporary App's location (give it a try!):
-https://www.dropbox.com/sh/19qbxxcu559fc63/AACrV3e1d6MoAFhPa4sXqnaGa?dl=0
+https://drive.google.com/folderview?id=0B03RVIztCHnhfjV0dlUtXzFkQ21vb2JaUEV6V3N4clI0ckp1Z0Mxa213ZzVjTEpHSkZWeWM&usp=sharing
 
 Cheers
