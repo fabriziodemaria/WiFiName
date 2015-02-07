@@ -71,7 +71,7 @@
     NSString *shortString;
     if([message length] > 20){
         shortString = [NSString stringWithFormat:@"%@...",
-                       [message substringToIndex:10]];
+                       [message substringToIndex:20]];
     } else if (self.wif.ssid == nil){
         shortString = @"Wi-Fi: Off";
     } else {
