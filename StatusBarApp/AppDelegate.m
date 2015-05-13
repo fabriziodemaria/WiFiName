@@ -30,14 +30,14 @@
     _defaults = [NSUserDefaults standardUserDefaults];
     
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
+    
     _statusItem = [statusBar statusItemWithLength:NSVariableStatusItemLength];
     //_statusItem.toolTip = @"Ctrl + Click to quit";
     [_statusItem setTarget:self];
     [_statusItem setAction:@selector(itemClicked:)];
     
     _wif = [CWInterface interface];
-    [self updateIcon];
-    [self updateTitle];
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceNotification:) name:CWSSIDDidChangeNotification object:nil];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
@@ -45,6 +45,9 @@
     // create menu
     [_statusItem setMenu:_myMenu]; // attach
     //[self performSelectorInBackground:@selector(stren) withObject:nil];
+    [self performSelectorInBackground:@selector(updateImageTimer) withObject:nil];
+    //[NSThread detachNewThreadSelector:@selector(func1) toTarget:self withObject:nil];
+    [self updateTitle];
 }
 - (IBAction)QuitPressed:(id)sender {
         [[NSApplication sharedApplication] terminate:self];
@@ -53,6 +56,13 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
 }
 
+- (void)updateImageTimer{
+    while(true){
+        sleep(1);
+        [self updateIcon];
+    }
+    
+}
 
 - (IBAction)showAbout:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
@@ -67,6 +77,7 @@
 
 
 -(void)updateTitle{
+ 
     NSString *message = [NSString stringWithFormat:@"%@",
                          self.wif.ssid];
     NSString *shortString;
@@ -80,7 +91,6 @@
     }
     [_statusItem setTitle:[NSString stringWithFormat:@"%@", shortString]];
     [self showNotification:self.wif.ssid];
-    
 }
 
 -(void)updateIcon {
