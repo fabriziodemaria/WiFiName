@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A27CAB011B03AF50002C6D8D /* wifi1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A27CAAFE1B03AF50002C6D8D /* wifi1.pdf */; };
+		A27CAB021B03AF50002C6D8D /* wifi2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A27CAAFF1B03AF50002C6D8D /* wifi2.pdf */; };
+		A27CAB031B03AF50002C6D8D /* wifi3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A27CAB001B03AF50002C6D8D /* wifi3.pdf */; };
 		FB6888DF1A5B3769005C1767 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6888DE1A5B3769005C1767 /* AppDelegate.m */; };
 		FB6888E11A5B3769005C1767 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6888E01A5B3769005C1767 /* main.m */; };
 		FB6888E41A5B376A005C1767 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6888E31A5B376A005C1767 /* ViewController.m */; };
@@ -30,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A27CAAFE1B03AF50002C6D8D /* wifi1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = wifi1.pdf; sourceTree = "<group>"; };
+		A27CAAFF1B03AF50002C6D8D /* wifi2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = wifi2.pdf; sourceTree = "<group>"; };
+		A27CAB001B03AF50002C6D8D /* wifi3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = wifi3.pdf; sourceTree = "<group>"; };
 		FB6888D81A5B3769005C1767 /* WiFiName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiFiName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6888DC1A5B3769005C1767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB6888DD1A5B3769005C1767 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +80,9 @@
 				FBF953181A6312E60015AC62 /* NewWindowController.h */,
 				FBD0522A1A6970CE000EB3EE /* wifi.png */,
 				FBF953191A6312E60015AC62 /* NewWindowController.m */,
+				A27CAAFE1B03AF50002C6D8D /* wifi1.pdf */,
+				A27CAAFF1B03AF50002C6D8D /* wifi2.pdf */,
+				A27CAB001B03AF50002C6D8D /* wifi3.pdf */,
 				FBF9531A1A6312E60015AC62 /* NewWindowController.xib */,
 				FB6888DA1A5B3769005C1767 /* StatusBarApp */,
 				FB6888F11A5B376A005C1767 /* StatusBarAppTests */,
@@ -212,9 +221,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A27CAB011B03AF50002C6D8D /* wifi1.pdf in Resources */,
+				A27CAB031B03AF50002C6D8D /* wifi3.pdf in Resources */,
 				FB6888E61A5B376A005C1767 /* Images.xcassets in Resources */,
 				FB6888E91A5B376A005C1767 /* Main.storyboard in Resources */,
 				FBD0522B1A6970CE000EB3EE /* wifi.png in Resources */,
+				A27CAB021B03AF50002C6D8D /* wifi2.pdf in Resources */,
 				FBF9531C1A6312E60015AC62 /* NewWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
