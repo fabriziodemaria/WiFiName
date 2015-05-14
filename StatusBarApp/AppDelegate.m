@@ -85,7 +85,7 @@
         shortString = [NSString stringWithFormat:@"%@...",
                        [message substringToIndex:20]];
     } else if (self.wif.ssid == nil){
-        shortString = @"Wifi Off";
+        shortString = @"WiFi Off";
     } else {
         shortString = message;
     }
@@ -99,7 +99,7 @@
 
     if(power > -40 && power > 0){
         image = [NSImage imageNamed:@"wifi3.pdf"];
-    }
+    }         
     if(power <= -40 && power >- 55){
         image = [NSImage imageNamed:@"wifi3.pdf"];
     }
@@ -163,7 +163,7 @@
     
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     notification.title = @"New Wi-Fi connection";
-    NSString *namemsg = [NSString stringWithFormat:@"Wi-Fi name: %@ %@",
+    NSString *namemsg = [NSString stringWithFormat:@"Wi-Fi name: %@%@",
                          wifiname, power];
     notification.informativeText = namemsg;
     //notification.soundName = NSUserNotificationDefaultSoundName;
